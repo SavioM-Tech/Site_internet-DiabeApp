@@ -1,0 +1,150 @@
+/* =========================
+   Diabe-App Theme Override
+   Palette app : #2BA89F -> #78C48E -> #A8D080
+   ========================= */
+
+:root {
+  --diabeapp-primary: #2BA89F;
+  --diabeapp-secondary: #78C48E;
+  --diabeapp-tertiary: #A8D080;
+  --diabeapp-danger: #FF5A5F;
+  --diabeapp-ink: #0f172a;
+  --diabeapp-muted: #64748b;
+  --diabeapp-soft: rgba(43, 168, 159, 0.12);
+
+  /* Beaucoup de templates utilisent un "theme-color" CSS var côté JS */
+  --theme-color: var(--diabeapp-primary);
+}
+
+/* Amélioration globale */
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+a:hover {
+  color: var(--diabeapp-primary);
+}
+
+/* Boutons (harmonisation) */
+.th-btn {
+  background: linear-gradient(90deg, var(--diabeapp-primary), var(--diabeapp-secondary));
+  border: none;
+  box-shadow: 0 10px 30px rgba(43, 168, 159, 0.25);
+}
+
+.th-btn:hover {
+  filter: brightness(1.02);
+  transform: translateY(-1px);
+}
+
+.th-btn.th-border2,
+.th-btn.style1 {
+  background: transparent;
+  border: 1px solid rgba(43, 168, 159, 0.45);
+  color: #fff;
+}
+
+.th-btn.th-border2:hover {
+  background: rgba(43, 168, 159, 0.12);
+}
+
+/* Header top : rendu + lisible */
+.header-top .header-links a,
+.header-top .header-links span {
+  font-weight: 500;
+}
+
+.header-top .header-links i {
+  color: var(--diabeapp-primary);
+}
+
+/* Hero */
+.diabeapp-hero .hero-title {
+  letter-spacing: -0.02em;
+}
+
+.diabeapp-hero .hero-text {
+  max-width: 56ch;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Icônes dans les cards */
+.diabeapp-bigicon {
+  font-size: 28px;
+  color: var(--diabeapp-primary);
+}
+
+/* Quote icon */
+.diabeapp-quote {
+  font-size: 22px;
+  color: var(--diabeapp-primary);
+}
+
+/* Work cards */
+.work-card .box-icon i {
+  color: var(--diabeapp-primary);
+}
+
+/* Accordéon FAQ : accent */
+.accordion-button:not(.collapsed) {
+  background: rgba(43, 168, 159, 0.10);
+  color: var(--diabeapp-ink);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(43, 168, 159, 0.20);
+}
+
+/* Blog cards : hover clean */
+.blog-card.style3:hover .box-title a {
+  color: var(--diabeapp-primary);
+}
+
+/* Footer : dégradé proche de l’app */
+.footer-wrapper.footer-layout2 .footer-top {
+  background: linear-gradient(90deg, #1E6F68, var(--diabeapp-primary), var(--diabeapp-secondary));
+}
+
+/* Style switcher : cohérence */
+.diabeapp-scheme .switchIcon,
+.diabeapp-scheme .color-switch-btns button {
+  border-color: rgba(43, 168, 159, 0.25);
+}
+
+.diabeapp-scheme .color-switch-btns button i {
+  color: var(--diabeapp-primary);
+}
+
+/* Quicklinks side menu */
+.diabeapp-quicklinks a {
+  background: rgba(43, 168, 159, 0.10);
+  border: 1px solid rgba(43, 168, 159, 0.22);
+}
+
+.diabeapp-quicklinks a i {
+  color: var(--diabeapp-primary);
+}
+
+/* Petites finitions */
+.sub-title {
+  letter-spacing: 0.06em;
+}
+
+.sec-title span,
+.sec-title .fw-normal {
+  text-decoration: none;
+}
+
+/* Accessibilité : focus visible */
+a:focus,
+button:focus,
+input:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  box-shadow: 0 0 0 3px rgba(43, 168, 159, 0.25);
+  border-radius: 10px;
+}
