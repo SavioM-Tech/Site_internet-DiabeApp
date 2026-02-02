@@ -1,0 +1,721 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Diabe-APP – Votre compagnon santé au quotidien</title>
+
+    <!-- ✅ SEO -->
+    <meta name="description"
+        content="Diabe-APP vous aide à mieux vivre avec le diabète : suivi glycémique, rappels, alimentation IG, activité physique, calcul IMC et conseils. Disponible sur iOS & Android.">
+    <meta name="keywords"
+        content="diabète, glycémie, suivi glycémique, journal glycémique, IMC, alimentation IG, rappels médicaments, santé, application diabète">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="author" content="Diabe-APP">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#22B573">
+
+    <!-- ✅ Open Graph -->
+    <meta property="og:title" content="Diabe-APP – Votre compagnon santé au quotidien">
+    <meta property="og:description"
+        content="Suivi glycémique, rappels, alimentation IG, activité physique et IMC : tout-en-un pour gérer votre diabète simplement. iOS & Android.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/icon.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Saira:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        :root {
+            --diabe-green: #22B573;
+            --diabe-purple: #7C4DFF;
+            --diabe-pink: #E84393;
+            --diabe-orange: #F59E0B;
+            --theme-color: var(--diabe-green);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :is(section, div)[id] {
+            scroll-margin-top: 92px;
+        }
+
+        /* ===== MENU DESKTOP ===== */
+        .diabe-header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, .06);
+        }
+
+        .diabe-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 0;
+        }
+
+        .diabe-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 280px;
+        }
+
+        .diabe-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            color: #0b1220;
+            white-space: nowrap;
+        }
+
+        .diabe-brand img {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .diabe-email {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #0b1220;
+            opacity: .85;
+            white-space: nowrap;
+        }
+
+        .diabe-email i {
+            color: var(--diabe-green);
+        }
+
+        .diabe-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .diabe-menu {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .diabe-menu a {
+            font-weight: 700;
+            color: #0b1220;
+            opacity: .9;
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        .diabe-menu a:hover {
+            opacity: 1;
+            background: rgba(34, 181, 115, .10);
+        }
+
+        .diabe-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: flex-end;
+            min-width: 280px;
+        }
+
+        .diabe-burger {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, .08);
+            background: #fff;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, .06);
+            cursor: pointer;
+        }
+
+        /* ===== RESPONSIVE MOBILE ===== */
+        @media (max-width: 992px) {
+            .diabe-left {
+                min-width: auto;
+            }
+
+            .diabe-email {
+                display: none;
+            }
+
+            .diabe-center {
+                display: none;
+            }
+
+            .diabe-right {
+                min-width: auto;
+                gap: 8px;
+            }
+
+            /* Masquer les boutons desktop sur mobile */
+            .diabe-right .th-btn {
+                display: none !important;
+            }
+
+            /* Afficher uniquement le burger */
+            .diabe-burger {
+                display: inline-flex !important;
+            }
+        }
+
+        /* ✅ FIX MENU MOBILE (plein écran + bouton X bien placé) */
+        @media (max-width: 576px) {
+            .th-menu-wrapper {
+                position: fixed !important;
+                inset: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background: rgba(11, 18, 32, .62) !important;
+                z-index: 9999 !important;
+            }
+
+            .th-menu-area {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                border: 0 !important;
+                box-shadow: none !important;
+                overflow-y: auto !important;
+                padding-top: 86px !important;
+            }
+
+            .th-menu-area .th-menu-toggle {
+                position: absolute !important;
+                top: 16px !important;
+                right: 16px !important;
+                left: auto !important;
+                margin: 0 !important;
+                z-index: 5 !important;
+            }
+
+            .th-menu-area .mobile-logo {
+                margin-top: -64px !important;
+                margin-bottom: 18px !important;
+            }
+
+            .th-mobile-menu ul {
+                padding-left: 0 !important;
+            }
+        }
+
+        /* ===== BANNIÈRE INDICATEURS ===== */
+        .stats-banner {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 40px 0;
+            margin-bottom: 0;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .stat-card.loaded {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .stat-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .stat-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .stat-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .stat-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #fff;
+            margin: 0 0 8px 0;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .stat-label {
+                font-size: 14px;
+            }
+        }
+
+        .hero-lead {
+            opacity: .92;
+            max-width: 560px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .testi-slider7 .slider-pagination,
+        .hero-slider7 .slider-pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== Mobile Menu (one-page) ===== -->
+    <div class="th-menu-wrapper">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="#hero"><img src="assets/icon.png" alt="Diabe-APP" style="border-radius:12px;"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul>
+                    <li><a href="home">Application</a></li>
+                    <li><a href="#features">Fonctionnalités</a></li>
+                    <li><a href="#testimonials">Témoignages</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#download">Télécharger</a></li>
+                    <li><a href="#support">Soutenir</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ MENU UNIQUE -->
+    <header class="diabe-header">
+        <div class="container">
+            <div class="diabe-nav">
+
+                <!-- Gauche -->
+                <div class="diabe-left">
+                    <a class="diabe-brand" href="#hero" aria-label="Diabe-APP">
+                        <img src="assets/icon.png" alt="Diabe-APP">
+                        <span>Diabe-APP</span>
+                    </a>
+                    <!-- <a class="diabe-email" href="mailto:contact@diabeapp.com">
+            <i class="fa-solid fa-envelope"></i>
+            <span>contact@diabeapp.com</span>
+          </a> -->
+                </div>
+
+                <!-- Milieu -->
+                <nav class="diabe-center" aria-label="Navigation principale">
+                    <ul class="diabe-menu">
+                        <li><a href="home">Application</a></li>
+                        <li><a href="#features">Fonctionnalités</a></li>
+                        <li><a href="#testimonials">Témoignages</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Droite -->
+                <div class="diabe-right">
+                    <a href="#download" class="th-btn">
+                        Télécharger <i class="fa-solid fa-download ms-2"></i>
+                    </a>
+                    <a href="#support" class="th-btn th-border2">
+                        Soutenir <i class="fa-solid fa-heart ms-2"></i>
+                    </a>
+
+                    <button class="diabe-burger" data-open-mobile-menu aria-label="Ouvrir le menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
+        <div class="container">
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">Nous contacter</h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="home-medical-clinic.html">Home</a></li>
+                    <li>Nous contacter</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="space overflow-hidden" id="contact-sec">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-xl-4">
+                    <div class="contact-media-wrap">
+                        <div class="contact-media">
+                            <a href="#">
+                                <div class="icon-btn"><i class="fa-solid fa-heart ms-2"></i></div>
+                            </a>
+                            <div class="media-body">
+                                <h5 class="box-title">Faire un don de soutien</h5>
+                                <p class="box-text">Votre soutien nous aide à améliorer Diabe-App et à promouvoir la
+                                    prévention du diabète.</p>
+                            </div>
+                        </div>
+                        <!-- <div class="contact-media">
+                                <div class="icon-btn"><i class="fa-light fa-phone"></i></div>
+                                <div class="media-body">
+                                    <h5 class="box-title">Numero de telephone</h5>
+                                    <p class="box-text">
+                                        <a href="tel:+00123666000666"> (+33) 01 66 60 00 66</a>
+                                        <a href="tel:+00123888000222"> (+33) 06 41 00 36 86</a>
+                                    </p>
+                                </div>
+                            </div> -->
+                        <div class="contact-media">
+                            <div class="icon-btn"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="media-body">
+                                <h5 class="box-title">Adresse Email </h5>
+                                <p>Vous pouvez aussi nous écrire directement à </p>
+                                <a href="mailto:contact@diabeapp.com">contact@diabeapp.com</a><br>
+                                <!-- <a href="mailto:admission@examplemail.edu">diabeapp.io</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <form action="https://diabeapp.com/fr/contact" method="POST" class="contact-form ajax-contact">
+                        <h3 class="h4 mb-30 mt-n3">Vous avez des questions ? Contactez-nous</h3>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="nom_prenom" id="nom_prenom"
+                                    placeholder="Nom complet " />
+                                <i class="fal fa-user"></i>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="tel" class="form-control" name="telephone" id="telephone"
+                                    placeholder="numero de téléphone" />
+                                <i class="fal fa-phone"></i>
+                            </div>
+                            <div class="form-group col-12">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="adresse e-mail *" />
+                                <i class="fal fa-envelope"></i>
+                            </div>
+                            <div class="form-group col-12">
+                                <select name="profil" id="profil" class="form-select nice-select">
+                                    <option value="" disabled="disabled" selected="selected" hidden>
+                                        Sélectionnez votre profil</option>
+                                    <option value="General Medicinet">Utilisateur</option>
+                                    <option value="Heart Specialists">Organisme</option>
+                                    <option value="Heart Specialists">Donateur</option>
+                                    <option value="Skin & Hair Specialists">Autres</option>
+                                    <!-- <option value="Child Specialists">Child Specialists</option> -->
+                                </select>
+                            </div>
+                            <div class="form-group col-12">
+                                <textarea name="message" id="message" cols="30" rows="3" class="form-control"
+                                    placeholder="Votre message"></textarea>
+                                <i class="fal fa-comment"></i>
+                            </div>
+                            <div class="form-btn mt-20 col-12"><button class="th-btn">Envoyer le message</button>
+                            </div>
+                        </div>
+                        <p class="form-messages mb-0 mt-3"></p>
+
+                        <!-- <div id="loadingMessage" class="alert-loading">
+                            <span class="spinner"></span>
+                            Envoi en cours...
+                           </div>
+                            <div id="successMessage" class="alert-success">
+                                ✅ <strong>Message envoyé avec succès !</strong><br>
+                                Nous vous répondrons dans les plus brefs délais.
+                            </div>
+                            <div id="errorMessage" class="alert-error">
+                                ❌ <strong>Erreur lors de l'envoi.</strong><br>
+                                Veuillez réessayer ou nous contacter directement à : contact@diabeapp.io
+                            </div> -->
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer / Download -->
+    <footer class="footer-wrapper footer-layout2" id="download">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4 justify-content-between align-items-center">
+                    <div class="col-lg-5">
+                        <div class="title-area mb-0 text-center text-lg-start">
+                            <h4 class="sec-title text-white m-0">Téléchargez Diabe-App dès maintenant</h4>
+                            <p class="text-white-50 mt-2 mb-0">Disponible sur Android & iOS</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="footer-top-btn">
+                            <div class="btn-group justify-content-center justify-content-lg-end">
+                                <a href="#" class="th-btn style3">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                        alt="Google Play"
+                                        style="height: 40px; width: 140px; object-fit: contain; vertical-align: middle" />
+                                    Télécharger
+                                </a>
+                                <a href="#" class="th-btn style3">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                                        alt="App Store"
+                                        style="height: 40px; width: 140px; object-fit: contain; vertical-align: middle" />
+                                    Télécharger
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="support">
+            <div class="row gy-2 justify-content-center justify-content-md-between align-items-center">
+                <div class="col-md-7 col-lg-6 text-center text-md-start">
+                    <div class="social-links">
+                        <i class="fa-solid fa-envelope"
+                            style="
+                            background: linear-gradient(135deg,#22B573,#34D399,#16A34A);
+                            -webkit-background-clip:text;
+                            background-clip:text;
+                            -webkit-text-fill-color:transparent;
+                            display:inline-block;"></i>
+                        <span class="title"> contact@diabeapp.com</span>
+                        <!--
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> -->
+                        <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-md-4 justify-content-center justify-content-lg-end text-center text-md-end">
+                    <a href="don.html" class="th-btn style1 ">
+                        Faire un don de soutien <i class="fa-light fa-heart mx-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="row gy-2 align-items-center">
+                    <div class="col-lg-6">
+                        <p class="copyright-text">
+                            Copyright <i class="fal fa-copyright"></i> 2026
+                            <a href="#hero">Diabe-App</a> - Designed by <i class="fa-solid fa-user-circle"></i>
+                            Savio MILANDOU
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <div class="footer-links">
+                            <ul>
+                                <li><a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#mentionsLegalesModal">Conditions d'utilisation</a></li>
+                                <li><a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#confidentialiteModal">Politique de confidentialité</a></li>
+                                <li><a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#cookiesModal">Cookies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Mentions Légales / Conditions d'utilisation -->
+    <div class="modal fade" id="mentionsLegalesModal" tabindex="-1" aria-labelledby="mentionsLegalesModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mentionsLegalesModalLabel">Mentions légales</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Éditeur du site</h6>
+                    <p>
+                        <strong>Diabe-App</strong><br>
+                        SASU<br>
+                        SIRET : En cours d'immatriculation<br>
+                        Siège social : Choisy-le-Roi, France<br>
+                        Email : contact@diabeapp.com
+                    </p>
+
+                    <h6>Direction de la publication</h6>
+                    <p>SavioTech</p>
+
+                    <h6>Hébergement</h6>
+                    <p>
+                        <strong>Infomaniak Network SA</strong><br>
+                        Rue Eugène-Marziano 25<br>
+                        1227 Genève, Suisse<br>
+                        <a href="https://www.infomaniak.com" target="_blank" rel="noopener">www.infomaniak.com</a>
+                    </p>
+
+                    <h6>Propriété intellectuelle</h6>
+                    <p>L'ensemble du contenu de ce site (textes, images, logo) est la propriété exclusive de Diabe-App,
+                        sauf mention contraire. Toute reproduction est interdite sans autorisation préalable.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confidentialité -->
+    <div class="modal fade" id="confidentialiteModal" tabindex="-1" aria-labelledby="confidentialiteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confidentialiteModalLabel">Politique de confidentialité</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Données collectées</h6>
+                    <p>Lorsque vous utilisez notre formulaire de contact, nous collectons les informations suivantes :
+                        nom et prénom, email, téléphone, profil (optionnel) et votre message. Ces données sont utilisées
+                        uniquement pour répondre à votre demande.</p>
+
+                    <h6>Utilisation des données</h6>
+                    <p>Vos données personnelles ne sont jamais vendues, louées ou partagées avec des tiers. Elles sont
+                        conservées uniquement le temps nécessaire au traitement de votre demande.</p>
+
+                    <h6>Vos droits</h6>
+                    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos
+                        données. Pour exercer ces droits, contactez-nous à : <a
+                            href="mailto:contact@diabeapp.com">contact@diabeapp.com</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Cookies -->
+    <div class="modal fade" id="cookiesModal" tabindex="-1" aria-labelledby="cookiesModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cookiesModalLabel">Politique de cookies</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Utilisation des cookies</h6>
+                    <p>Ce site n'utilise pas de cookies de tracking ni de cookies publicitaires. Seuls des cookies
+                        techniques essentiels au fonctionnement du site peuvent être utilisés.</p>
+
+                    <h6>Cookies techniques</h6>
+                    <p>Les cookies techniques sont nécessaires au bon fonctionnement du site. Ils permettent notamment
+                        de maintenir votre session active et de mémoriser vos préférences de navigation.</p>
+
+                    <h6>Gestion des cookies</h6>
+                    <p>Vous pouvez à tout moment configurer votre navigateur pour refuser les cookies. Cependant, cela
+                        peut affecter certaines fonctionnalités du site.</p>
+
+                    <h6>Durée de conservation</h6>
+                    <p>Les cookies techniques sont conservés pour une durée maximale de 13 mois, conformément aux
+                        recommandations de la CNIL.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scroll-top">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="
+                        transition: stroke-dashoffset 10ms linear 0s;
+                        stroke-dasharray: 307.919, 307.919;
+                        stroke-dashoffset: 307.919;
+                    ">
+            </path>
+        </svg>
+    </div>
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
