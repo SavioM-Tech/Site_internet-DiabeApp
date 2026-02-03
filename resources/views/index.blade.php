@@ -234,6 +234,42 @@
             }
         }
 
+        /* ✅ FIX MOBILE MENU - Remove subfolder display */
+        .th-mobile-menu ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .th-mobile-menu ul li {
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+        }
+
+        .th-mobile-menu ul li::before {
+            display: none !important;
+        }
+
+        .th-mobile-menu ul li a {
+            display: block;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: #0b1220;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .th-mobile-menu ul li:last-child a {
+            border-bottom: none;
+        }
+
+        .th-mobile-menu ul li a:hover {
+            background: rgba(34, 181, 115, 0.1);
+            color: var(--diabe-green);
+        }
+
         /* ===== BANNIÈRE INDICATEURS ===== */
         .stats-banner {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -331,12 +367,83 @@
             justify-content: center;
             margin-top: 22px;
         }
+
+        /* ✅ DONATION MODAL STYLES */
+        .donation-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .donation-option {
+            flex: 1;
+            min-width: 80px;
+            padding: 15px 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .donation-option:hover {
+            border-color: var(--diabe-green);
+            background: rgba(34, 181, 115, 0.05);
+        }
+
+        .donation-option.active {
+            border-color: var(--diabe-green);
+            background: var(--diabe-green);
+            color: white;
+        }
+
+        .custom-amount-input {
+            margin-top: 15px;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .payment-method-btn {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .payment-method-btn:hover {
+            border-color: var(--diabe-green);
+            background: rgba(34, 181, 115, 0.05);
+        }
+
+        .payment-method-btn.active {
+            border-color: var(--diabe-green);
+            background: rgba(34, 181, 115, 0.1);
+        }
+
+        .payment-method-btn i {
+            font-size: 24px;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- ===== Mobile Menu (one-page) ===== -->
+    <!-- ===== Mobile Menu (one-page) - FIXED ===== -->
     <div class="th-menu-wrapper">
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
@@ -367,10 +474,6 @@
                         <img src="assets/icon.png" alt="Diabe-APP">
                         <span>Diabe-APP</span>
                     </a>
-                    <!-- <a class="diabe-email" href="mailto:contact@diabeapp.com">
-            <i class="fa-solid fa-envelope"></i>
-            <span>contact@diabeapp.com</span>
-          </a> -->
                 </div>
 
                 <!-- Milieu -->
@@ -388,7 +491,7 @@
                     <a href="#download" class="th-btn">
                         Télécharger <i class="fa-solid fa-download ms-2"></i>
                     </a>
-                    <a href="#support" class="th-btn th-border2">
+                    <a href="#" class="th-btn th-border2" data-bs-toggle="modal" data-bs-target="#donationModal">
                         Soutenir <i class="fa-solid fa-heart ms-2"></i>
                     </a>
 
@@ -482,7 +585,9 @@
                                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.8s">
                                                     <a href="#features" class="th-btn">Fonctionnalités <i
                                                             class="fa-solid fa-grid-2 ms-2"></i></a>
-                                                    <a href="#support" class="th-btn th-border2">Soutenir le projet <i
+                                                    <a href="#" class="th-btn th-border2"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#donationModal">Soutenir le projet <i
                                                             class="fa-solid fa-heart ms-2"></i></a>
                                                 </div>
                                             </div>
@@ -522,14 +627,15 @@
 
                         <div class="col-xl-12 col-md-6">
                             <div class="hero-feature-card7 bg-smoke5">
-                                <a href="contact" class="icon-btn" aria-label="Découvrir">
+                                <a href="#" class="icon-btn" aria-label="Découvrir" data-bs-toggle="modal"
+                                    data-bs-target="#donationModal">
                                     <i class="fa-solid fa-heart ms-2"></i>
                                 </a>
 
                                 <h6>Soutenir l'application Diabe-App</h6>
                                 <p class="faq-text">
                                     Votre générosité nous aide à améliorer Diabe-App, à promouvoir la prévention du
-                                    diabète et à rendre l’information santé accessible à tous.
+                                    diabète et à rendre l'information santé accessible à tous.
                                 </p>
                             </div>
                         </div>
@@ -1134,13 +1240,10 @@
 
                         <a href="contact" target="_blank"> <i class="fas fa-phone"></i></a>
                         <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                        <!-- <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a> -->
                     </div>
                 </div>
                 <div class="col-md-4 justify-content-center justify-content-lg-end text-center text-md-end">
-                    <a href="#" class="th-btn style1">
+                    <a href="#" class="th-btn style1" data-bs-toggle="modal" data-bs-target="#donationModal">
                         Faire un don de soutien <i class="fa-light fa-heart mx-3"></i>
                     </a>
                 </div>
@@ -1173,6 +1276,64 @@
             </div>
         </div>
     </footer>
+
+    <!-- ✅ DONATION MODAL -->
+    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 2px solid var(--diabe-green);">
+                    <h5 class="modal-title" id="donationModalLabel">
+                        <i class="fa-solid fa-heart" style="color: var(--diabe-green); margin-right: 10px;"></i>
+                        Soutenez Diabe-App
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align: center; margin-bottom: 25px; color: #555;">
+                        Votre contribution nous aide à améliorer l'application et à promouvoir la prévention du diabète.
+                    </p>
+
+                    <!-- Montants prédéfinis -->
+                    <div class="donation-options">
+                        <div class="donation-option" data-amount="5">5€</div>
+                        <div class="donation-option" data-amount="10">10€</div>
+                        <div class="donation-option" data-amount="20">20€</div>
+                        <div class="donation-option" data-amount="50">50€</div>
+                    </div>
+
+                    <!-- Montant personnalisé -->
+                    <div class="custom-amount-input">
+                        <label for="customAmount" style="font-weight: 600; margin-bottom: 8px; display: block;">
+                            Ou choisissez un montant personnalisé :
+                        </label>
+                        <input type="number" id="customAmount" class="form-control" placeholder="Montant en €"
+                            min="1" step="1">
+                    </div>
+
+                    <!-- Méthodes de paiement -->
+                    <h6 style="margin-top: 25px; margin-bottom: 15px; font-weight: 700; text-align: center;">
+                        Choisissez votre méthode de paiement :
+                    </h6>
+                    <div class="payment-methods">
+                        <button class="payment-method-btn" id="paypalBtn">
+                            <i class="fab fa-paypal" style="color: #0070ba;"></i>
+                            PayPal
+                        </button>
+                        <button class="payment-method-btn" id="cardBtn">
+                            <i class="fas fa-credit-card" style="color: var(--diabe-green);"></i>
+                            Carte bancaire
+                        </button>
+                    </div>
+
+                    <!-- Message de remerciement -->
+                    <p style="text-align: center; font-size: 14px; color: #777; margin-top: 20px;">
+                        🙏 Merci de votre générosité !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal Mentions Légales / Conditions d'utilisation -->
     <div class="modal fade" id="mentionsLegalesModal" tabindex="-1" aria-labelledby="mentionsLegalesModalLabel"
@@ -1290,125 +1451,182 @@
     <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <script>
-        // Animation des cartes statistiques + compteur (au chargement)
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const statCards = document.querySelectorAll('.stat-card');
-                statCards.forEach(card => card.classList.add('loaded'));
+    // ===== DONATION MODAL LOGIC avec Stripe =====
+    document.addEventListener('DOMContentLoaded', function() {
+        let selectedAmount = 0;
+        const stripe = Stripe('{{ config("services.stripe.key") }}');
 
-                // ✅ Compteur jQuery robuste (évite conflits $)
-                if (typeof jQuery !== "undefined") {
-                    (function($) {
-                        function formatValue(val, format) {
-                            if (format === "kplus") return Math.round(val) + "K+";
-                            if (format === "score") return val.toFixed(1) + "/5";
-                            if (format === "percent") return Math.round(val) + "%";
-                            return Math.round(val);
-                        }
-
-                        $(".stat-number").each(function(i) {
-                            var $el = $(this);
-                            var target = parseFloat($el.attr("data-count") || "0");
-                            var format = $el.attr("data-format") || "";
-                            var duration = 1400 + (i * 250);
-
-                            // reset à chaque refresh
-                            $el.text(formatValue(0, format));
-
-                            $({
-                                n: 0
-                            }).animate({
-                                n: target
-                            }, {
-                                duration: duration,
-                                easing: "swing",
-                                step: function() {
-                                    $el.text(formatValue(this.n, format));
-                                },
-                                complete: function() {
-                                    $el.text(formatValue(target, format));
-                                }
-                            });
-                        });
-                    })(jQuery);
-                }
-
-            }, 300);
+        // Sélection montant prédéfini
+        document.querySelectorAll('.donation-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.donation-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                selectedAmount = parseInt(this.getAttribute('data-amount'));
+                document.getElementById('customAmount').value = '';
+            });
         });
 
-        // Menu mobile
-        (function() {
-            document.addEventListener('click', function(e) {
-                const openBtn = e.target.closest('[data-open-mobile-menu]');
-                if (!openBtn) return;
+        // Montant personnalisé
+        document.getElementById('customAmount').addEventListener('input', function() {
+            document.querySelectorAll('.donation-option').forEach(opt => opt.classList.remove('active'));
+            selectedAmount = parseInt(this.value) || 0;
+        });
 
-                const templateToggle = document.querySelector('.th-menu-wrapper .th-menu-toggle');
-                if (templateToggle) templateToggle.click();
-            });
-        })();
-
-        // Scroll animé
-        (function() {
-            const header = document.querySelector('.diabe-header');
-
-            function getHeaderOffset() {
-                if (!header) return 0;
-                return header.getBoundingClientRect().height + 10;
+        // PayPal
+        document.getElementById('paypalBtn').addEventListener('click', function() {
+            if (selectedAmount <= 0) {
+                showNotification('⚠️ Attention', 'Veuillez sélectionner ou entrer un montant.', 'error');
+                return;
             }
 
-            function smoothScrollToEl(el) {
-                const offset = getHeaderOffset();
-                const top = window.pageYOffset + el.getBoundingClientRect().top - offset;
-                window.scrollTo({
-                    top,
-                    behavior: 'smooth'
+            showNotification('🎉 Merci !', `Redirection vers PayPal pour ${selectedAmount}€...`, 'success');
+            
+            setTimeout(() => {
+                const paypalUrl = `https://www.paypal.com/paypalme/votrenom/${selectedAmount}`;
+                window.open(paypalUrl, '_blank');
+            }, 1000);
+        });
+
+        // Stripe - Carte bancaire
+        document.getElementById('cardBtn').addEventListener('click', async function() {
+            if (selectedAmount <= 0) {
+                showNotification('⚠️ Attention', 'Veuillez sélectionner ou entrer un montant.', 'error');
+                return;
+            }
+
+            try {
+                // Désactiver le bouton
+                this.disabled = true;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement...';
+
+                // Notification élégante
+                showNotification('🎉 Merci pour votre don !', `Redirection vers le paiement sécurisé de ${selectedAmount}€...`, 'success');
+
+                // Créer session Stripe
+                const response = await fetch('{{ route("donation.checkout") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({ amount: selectedAmount })
                 });
+
+                const session = await response.json();
+
+                if (session.error) {
+                    throw new Error(session.error);
+                }
+
+                // Redirection Stripe
+                const result = await stripe.redirectToCheckout({
+                    sessionId: session.id
+                });
+
+                if (result.error) {
+                    showNotification('❌ Erreur', result.error.message, 'error');
+                }
+
+            } catch (error) {
+                console.error('Erreur:', error);
+                showNotification('❌ Erreur', 'Une erreur est survenue. Veuillez réessayer.', 'error');
+            } finally {
+                this.disabled = false;
+                this.innerHTML = '<i class="fas fa-credit-card" style="color: var(--diabe-green);"></i> Carte bancaire';
             }
+        });
 
-            document.addEventListener('click', function(e) {
-                const link = e.target.closest('a[href^="#"]');
-                if (!link) return;
+        // Fonction notification
+        function showNotification(title, message, type = 'info') {
+            const oldNotif = document.getElementById('customNotification');
+            if (oldNotif) oldNotif.remove();
 
-                const hash = link.getAttribute('href');
-                if (!hash || hash === '#') return;
+            const notification = document.createElement('div');
+            notification.id = 'customNotification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                padding: 20px 25px;
+                border-radius: 12px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                z-index: 99999;
+                min-width: 300px;
+                max-width: 400px;
+                animation: slideInRight 0.3s ease;
+                border-left: 4px solid ${type === 'success' ? '#22B573' : type === 'error' ? '#dc3545' : '#007bff'};
+            `;
 
-                const id = hash.slice(1);
-                const target = document.getElementById(id);
-                if (!target) return;
+            notification.innerHTML = `
+                <div style="display: flex; align-items: start; gap: 15px;">
+                    <div style="
+                        width: 40px;
+                        height: 40px;
+                        background: ${type === 'success' ? '#22B573' : type === 'error' ? '#dc3545' : '#007bff'};
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        color: white;
+                        font-size: 20px;
+                        font-weight: bold;
+                    ">
+                        ${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}
+                    </div>
+                    <div style="flex: 1;">
+                        <h4 style="margin: 0 0 5px 0; color: #333; font-size: 16px; font-weight: 700;">${title}</h4>
+                        <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.4;">${message}</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" style="
+                        background: none;
+                        border: none;
+                        font-size: 24px;
+                        color: #999;
+                        cursor: pointer;
+                        padding: 0;
+                        line-height: 1;
+                        width: 24px;
+                        height: 24px;
+                    ">×</button>
+                </div>
+            `;
 
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation();
-
-                history.pushState(null, '', hash);
-                smoothScrollToEl(target);
-
-                const closeBtn = document.querySelector('.th-menu-area .th-menu-toggle');
-                if (closeBtn && document.body.classList.contains('th-menu-open')) {
-                    closeBtn.click();
-                } else {
-                    const wrapper = document.querySelector('.th-menu-wrapper');
-                    if (wrapper && wrapper.classList.contains('open')) closeBtn?.click();
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInRight {
+                    from { transform: translateX(400px); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
                 }
-            }, true);
+            `;
+            document.head.appendChild(style);
 
-            window.addEventListener('load', function() {
-                if (location.hash && location.hash.length > 1) {
-                    const id = location.hash.slice(1);
-                    const target = document.getElementById(id);
-                    if (target) setTimeout(() => smoothScrollToEl(target), 60);
-                }
-            });
-        })();
-    </script>
+            document.body.appendChild(notification);
 
-    <!-- <p class="faq-text">
-                  <h5> Un projet 100% indépendant</h5>
-                    Diabe-App ne reçoit aucun financement de marque, laboratoire ou fabricant.
-                    Notre seul objectif est d’aider les utilisateurs à mieux comprendre le diabète et à adopter de bonnes habitudes pour la prévention et le bien-être.
-                  </p> -->
+            if (type !== 'error') {
+                setTimeout(() => {
+                    notification.style.animation = 'slideOutRight 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }, 4000);
+            }
+        }
+    });
+
+    // Menu mobile
+    (function() {
+        document.addEventListener('click', function(e) {
+            const openBtn = e.target.closest('[data-open-mobile-menu]');
+            if (!openBtn) return;
+
+            const templateToggle = document.querySelector('.th-menu-wrapper .th-menu-toggle');
+            if (templateToggle) templateToggle.click();
+        });
+    })();
+</script>
 
 </body>
 

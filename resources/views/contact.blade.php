@@ -4,25 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Diabe-APP – Votre compagnon santé au quotidien</title>
+    <title>Nous contacter - Diabe-APP</title>
 
     <!-- ✅ SEO -->
-    <meta name="description"
-        content="Diabe-APP vous aide à mieux vivre avec le diabète : suivi glycémique, rappels, alimentation IG, activité physique, calcul IMC et conseils. Disponible sur iOS & Android.">
-    <meta name="keywords"
-        content="diabète, glycémie, suivi glycémique, journal glycémique, IMC, alimentation IG, rappels médicaments, santé, application diabète">
+    <meta name="description" content="Contactez l'équipe Diabe-APP pour toute question ou suggestion.">
+    <meta name="keywords" content="contact, diabe-app, diabète, questions, support">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="author" content="Diabe-APP">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="theme-color" content="#22B573">
-
-    <!-- ✅ Open Graph -->
-    <meta property="og:title" content="Diabe-APP – Votre compagnon santé au quotidien">
-    <meta property="og:description"
-        content="Suivi glycémique, rappels, alimentation IG, activité physique et IMC : tout-en-un pour gérer votre diabète simplement. iOS & Android.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/icon.png">
-    <meta property="og:locale" content="fr_FR">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
@@ -99,20 +89,6 @@
             object-fit: cover;
         }
 
-        .diabe-email {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            color: #0b1220;
-            opacity: .85;
-            white-space: nowrap;
-        }
-
-        .diabe-email i {
-            color: var(--diabe-green);
-        }
-
         .diabe-center {
             flex: 1;
             display: flex;
@@ -168,10 +144,6 @@
                 min-width: auto;
             }
 
-            .diabe-email {
-                display: none;
-            }
-
             .diabe-center {
                 display: none;
             }
@@ -181,18 +153,16 @@
                 gap: 8px;
             }
 
-            /* Masquer les boutons desktop sur mobile */
             .diabe-right .th-btn {
                 display: none !important;
             }
 
-            /* Afficher uniquement le burger */
             .diabe-burger {
                 display: inline-flex !important;
             }
         }
 
-        /* ✅ FIX MENU MOBILE (plein écran + bouton X bien placé) */
+        /* ✅ FIX MENU MOBILE */
         @media (max-width: 576px) {
             .th-menu-wrapper {
                 position: fixed !important;
@@ -228,129 +198,154 @@
                 margin-top: -64px !important;
                 margin-bottom: 18px !important;
             }
-
-            .th-mobile-menu ul {
-                padding-left: 0 !important;
-            }
         }
 
-        /* ===== BANNIÈRE INDICATEURS ===== */
-        .stats-banner {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 40px 0;
-            margin-bottom: 0;
+        /* ✅ FIX MOBILE MENU - Remove subfolder display */
+        .th-mobile-menu ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
         }
 
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .th-mobile-menu ul li {
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
         }
 
-        .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
+        .th-mobile-menu ul li::before {
+            display: none !important;
         }
 
-        .stat-card.loaded {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .stat-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .stat-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .stat-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .stat-card:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stat-number {
-            font-size: 48px;
-            font-weight: 900;
-            color: #fff;
-            margin: 0 0 8px 0;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .stat-label {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
+        .th-mobile-menu ul li a {
+            display: block;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: #0b1220;
             font-weight: 600;
-            margin: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .stat-number {
-                font-size: 36px;
-            }
-
-            .stat-label {
-                font-size: 14px;
-            }
+        .th-mobile-menu ul li:last-child a {
+            border-bottom: none;
         }
 
-        .hero-lead {
-            opacity: .92;
-            max-width: 560px;
-            font-size: 16px;
-            line-height: 1.7;
+        .th-mobile-menu ul li a:hover {
+            background: rgba(34, 181, 115, 0.1);
+            color: var(--diabe-green);
         }
 
-        .testi-slider7 .slider-pagination,
-        .hero-slider7 .slider-pagination {
+        /* ✅ Success/Error Messages */
+        .alert-message {
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+        }
+
+        .alert-error ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+
+        /* ✅ DONATION MODAL STYLES */
+        .donation-options {
             display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .donation-option {
+            flex: 1;
+            min-width: 80px;
+            padding: 15px 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .donation-option:hover {
+            border-color: var(--diabe-green);
+            background: rgba(34, 181, 115, 0.05);
+        }
+
+        .donation-option.active {
+            border-color: var(--diabe-green);
+            background: var(--diabe-green);
+            color: white;
+        }
+
+        .custom-amount-input {
+            margin-top: 15px;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .payment-method-btn {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            margin-top: 22px;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .payment-method-btn:hover {
+            border-color: var(--diabe-green);
+            background: rgba(34, 181, 115, 0.05);
+        }
+
+        .payment-method-btn i {
+            font-size: 24px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ===== Mobile Menu (one-page) ===== -->
+    <!-- ===== Mobile Menu - FIXED ===== -->
     <div class="th-menu-wrapper">
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="#hero"><img src="assets/icon.png" alt="Diabe-APP" style="border-radius:12px;"></a>
+                <a href="home"><img src="assets/icon.png" alt="Diabe-APP" style="border-radius:12px;"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
-                    <li><a href="home">Application</a></li>
-                    <li><a href="#features">Fonctionnalités</a></li>
-                    <li><a href="#testimonials">Témoignages</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#download">Télécharger</a></li>
-                    <li><a href="#support">Soutenir</a></li>
+                    <li><a href="home#hero">Application</a></li>
+                    <li><a href="home#features">Fonctionnalités</a></li>
+                    <li><a href="home#testimonials">Témoignages</a></li>
+                    <li><a href="home#faq">FAQ</a></li>
+                    <li><a href="home#download">Télécharger</a></li>
+                    <li><a href="home#support">Soutenir</a></li>
                 </ul>
             </div>
         </div>
@@ -363,32 +358,28 @@
 
                 <!-- Gauche -->
                 <div class="diabe-left">
-                    <a class="diabe-brand" href="#hero" aria-label="Diabe-APP">
+                    <a class="diabe-brand" href="home" aria-label="Diabe-APP">
                         <img src="assets/icon.png" alt="Diabe-APP">
                         <span>Diabe-APP</span>
                     </a>
-                    <!-- <a class="diabe-email" href="mailto:contact@diabeapp.com">
-            <i class="fa-solid fa-envelope"></i>
-            <span>contact@diabeapp.com</span>
-          </a> -->
                 </div>
 
                 <!-- Milieu -->
                 <nav class="diabe-center" aria-label="Navigation principale">
                     <ul class="diabe-menu">
                         <li><a href="home">Application</a></li>
-                        <li><a href="#features">Fonctionnalités</a></li>
-                        <li><a href="#testimonials">Témoignages</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="home#features">Fonctionnalités</a></li>
+                        <li><a href="home#testimonials">Témoignages</a></li>
+                        <li><a href="home#faq">FAQ</a></li>
                     </ul>
                 </nav>
 
                 <!-- Droite -->
                 <div class="diabe-right">
-                    <a href="#download" class="th-btn">
+                    <a href="home#download" class="th-btn">
                         Télécharger <i class="fa-solid fa-download ms-2"></i>
                     </a>
-                    <a href="#support" class="th-btn th-border2">
+                    <a href="#" class="th-btn th-border2" data-bs-toggle="modal" data-bs-target="#donationModal">
                         Soutenir <i class="fa-solid fa-heart ms-2"></i>
                     </a>
 
@@ -400,25 +391,27 @@
             </div>
         </div>
     </header>
+
     <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Nous contacter</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="home-medical-clinic.html">Home</a></li>
+                    <li><a href="home">Accueil</a></li>
                     <li>Nous contacter</li>
                 </ul>
             </div>
         </div>
     </div>
+
     <div class="space overflow-hidden" id="contact-sec">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-xl-4">
                     <div class="contact-media-wrap">
                         <div class="contact-media">
-                            <a href="#">
-                                <div class="icon-btn"><i class="fa-solid fa-heart ms-2"></i></div>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#donationModal">
+                                <div class="icon-btn"><i class="fa-solid fa-heart"></i></div>
                             </a>
                             <div class="media-body">
                                 <h5 class="box-title">Faire un don de soutien</h5>
@@ -426,81 +419,78 @@
                                     prévention du diabète.</p>
                             </div>
                         </div>
-                        <!-- <div class="contact-media">
-                                <div class="icon-btn"><i class="fa-light fa-phone"></i></div>
-                                <div class="media-body">
-                                    <h5 class="box-title">Numero de telephone</h5>
-                                    <p class="box-text">
-                                        <a href="tel:+00123666000666"> (+33) 01 66 60 00 66</a>
-                                        <a href="tel:+00123888000222"> (+33) 06 41 00 36 86</a>
-                                    </p>
-                                </div>
-                            </div> -->
                         <div class="contact-media">
                             <div class="icon-btn"><i class="fa-solid fa-envelope"></i></div>
                             <div class="media-body">
                                 <h5 class="box-title">Adresse Email </h5>
                                 <p>Vous pouvez aussi nous écrire directement à </p>
                                 <a href="mailto:contact@diabeapp.com">contact@diabeapp.com</a><br>
-                                <!-- <a href="mailto:admission@examplemail.edu">diabeapp.io</a> -->
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-8">
-                    <form action="https://diabeapp.com/fr/contact" method="POST" class="contact-form ajax-contact">
+                    <!-- ✅ Success Message -->
+                    @if(session('success'))
+                    <div class="alert-message alert-success">
+                        ✅ <strong>{{ session('success') }}</strong>
+                    </div>
+                    @endif
+
+                    <!-- ✅ Error Messages -->
+                    @if($errors->any())
+                    <div class="alert-message alert-error">
+                        ❌ <strong>Erreur :</strong>
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+                    <form action="{{ route('contact.send') }}" method="POST" class="contact-form">
+                        @csrf
                         <h3 class="h4 mb-30 mt-n3">Vous avez des questions ? Contactez-nous</h3>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <input type="text" class="form-control" name="nom_prenom" id="nom_prenom"
-                                    placeholder="Nom complet " />
+                                <input type="text" class="form-control" name="name" id="name"
+                                    placeholder="Nom complet *" value="{{ old('name') }}" required />
                                 <i class="fal fa-user"></i>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="tel" class="form-control" name="telephone" id="telephone"
-                                    placeholder="numero de téléphone" />
+                                <input type="tel" class="form-control" name="phone" id="phone"
+                                    placeholder="Numéro de téléphone" value="{{ old('phone') }}" />
                                 <i class="fal fa-phone"></i>
                             </div>
                             <div class="form-group col-12">
                                 <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="adresse e-mail *" />
+                                    placeholder="Adresse e-mail *" value="{{ old('email') }}" required />
                                 <i class="fal fa-envelope"></i>
                             </div>
                             <div class="form-group col-12">
-                                <select name="profil" id="profil" class="form-select nice-select">
-                                    <option value="" disabled="disabled" selected="selected" hidden>
+                                <select name="profile" id="profile" class="form-select nice-select">
+                                    <option value="" disabled {{ old('profile') ? '' : 'selected' }}>
                                         Sélectionnez votre profil</option>
-                                    <option value="General Medicinet">Utilisateur</option>
-                                    <option value="Heart Specialists">Organisme</option>
-                                    <option value="Heart Specialists">Donateur</option>
-                                    <option value="Skin & Hair Specialists">Autres</option>
-                                    <!-- <option value="Child Specialists">Child Specialists</option> -->
+                                    <option value="Utilisateur" {{ old('profile')=='Utilisateur' ? 'selected' : '' }}>
+                                        Utilisateur</option>
+                                    <option value="Organisme" {{ old('profile')=='Organisme' ? 'selected' : '' }}>
+                                        Organisme</option>
+                                    <option value="Donateur" {{ old('profile')=='Donateur' ? 'selected' : '' }}>
+                                        Donateur</option>
+                                    <option value="Autres" {{ old('profile')=='Autres' ? 'selected' : '' }}>Autres
+                                    </option>
                                 </select>
                             </div>
                             <div class="form-group col-12">
                                 <textarea name="message" id="message" cols="30" rows="3" class="form-control"
-                                    placeholder="Votre message"></textarea>
+                                    placeholder="Votre message *" required>{{ old('message') }}</textarea>
                                 <i class="fal fa-comment"></i>
                             </div>
-                            <div class="form-btn mt-20 col-12"><button class="th-btn">Envoyer le message</button>
+                            <div class="form-btn mt-20 col-12">
+                                <button type="submit" class="th-btn">Envoyer le message</button>
                             </div>
                         </div>
-                        <p class="form-messages mb-0 mt-3"></p>
-
-                        <!-- <div id="loadingMessage" class="alert-loading">
-                            <span class="spinner"></span>
-                            Envoi en cours...
-                           </div>
-                            <div id="successMessage" class="alert-success">
-                                ✅ <strong>Message envoyé avec succès !</strong><br>
-                                Nous vous répondrons dans les plus brefs délais.
-                            </div>
-                            <div id="errorMessage" class="alert-error">
-                                ❌ <strong>Erreur lors de l'envoi.</strong><br>
-                                Veuillez réessayer ou nous contacter directement à : contact@diabeapp.io
-                            </div> -->
-
-
                     </form>
                 </div>
             </div>
@@ -553,16 +543,12 @@
                             -webkit-text-fill-color:transparent;
                             display:inline-block;"></i>
                         <span class="title"> contact@diabeapp.com</span>
-                        <!--
-                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> -->
                         <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                        <!-- <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a> -->
                     </div>
                 </div>
                 <div class="col-md-4 justify-content-center justify-content-lg-end text-center text-md-end">
-                    <a href="don.html" class="th-btn style1 ">
+                    <a href="#" class="th-btn style1" data-bs-toggle="modal" data-bs-target="#donationModal">
                         Faire un don de soutien <i class="fa-light fa-heart mx-3"></i>
                     </a>
                 </div>
@@ -575,7 +561,7 @@
                     <div class="col-lg-6">
                         <p class="copyright-text">
                             Copyright <i class="fal fa-copyright"></i> 2026
-                            <a href="#hero">Diabe-App</a> - Designed by <i class="fa-solid fa-user-circle"></i>
+                            <a href="home">Diabe-App</a> - Designed by <i class="fa-solid fa-user-circle"></i>
                             Savio MILANDOU
                         </p>
                     </div>
@@ -596,7 +582,64 @@
         </div>
     </footer>
 
-    <!-- Modal Mentions Légales / Conditions d'utilisation -->
+    <!-- ✅ DONATION MODAL -->
+    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 2px solid var(--diabe-green);">
+                    <h5 class="modal-title" id="donationModalLabel">
+                        <i class="fa-solid fa-heart" style="color: var(--diabe-green); margin-right: 10px;"></i>
+                        Soutenez Diabe-App
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align: center; margin-bottom: 25px; color: #555;">
+                        Votre contribution nous aide à améliorer l'application et à promouvoir la prévention du diabète.
+                    </p>
+
+                    <!-- Montants prédéfinis -->
+                    <div class="donation-options">
+                        <div class="donation-option" data-amount="5">5€</div>
+                        <div class="donation-option" data-amount="10">10€</div>
+                        <div class="donation-option" data-amount="20">20€</div>
+                        <div class="donation-option" data-amount="50">50€</div>
+                    </div>
+
+                    <!-- Montant personnalisé -->
+                    <div class="custom-amount-input">
+                        <label for="customAmount" style="font-weight: 600; margin-bottom: 8px; display: block;">
+                            Ou choisissez un montant personnalisé :
+                        </label>
+                        <input type="number" id="customAmount" class="form-control" placeholder="Montant en €" min="1"
+                            step="1">
+                    </div>
+
+                    <!-- Méthodes de paiement -->
+                    <h6 style="margin-top: 25px; margin-bottom: 15px; font-weight: 700; text-align: center;">
+                        Choisissez votre méthode de paiement :
+                    </h6>
+                    <div class="payment-methods">
+                        <button class="payment-method-btn" id="paypalBtn">
+                            <i class="fab fa-paypal" style="color: #0070ba;"></i>
+                            PayPal
+                        </button>
+                        <button class="payment-method-btn" id="cardBtn">
+                            <i class="fas fa-credit-card" style="color: var(--diabe-green);"></i>
+                            Carte bancaire
+                        </button>
+                    </div>
+
+                    <!-- Message de remerciement -->
+                    <p style="text-align: center; font-size: 14px; color: #777; margin-top: 20px;">
+                        🙏 Merci de votre générosité !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Mentions Légales -->
     <div class="modal fade" id="mentionsLegalesModal" tabindex="-1" aria-labelledby="mentionsLegalesModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -658,7 +701,7 @@
 
                     <h6>Vos droits</h6>
                     <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos
-                        données. Pour exercer ces droits, contactez-nous à : <a
+                        données. Pour exercer ces droits, contactez-nous à : 
                             href="mailto:contact@diabeapp.com">contact@diabeapp.com</a></p>
                 </div>
                 <div class="modal-footer">
@@ -669,8 +712,7 @@
     </div>
 
     <!-- Modal Cookies -->
-    <div class="modal fade" id="cookiesModal" tabindex="-1" aria-labelledby="cookiesModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="cookiesModal" tabindex="-1" aria-labelledby="cookiesModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -713,9 +755,189 @@
             </path>
         </svg>
     </div>
+
     <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/main.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+    // ===== DONATION MODAL LOGIC avec Stripe =====
+    document.addEventListener('DOMContentLoaded', function() {
+        let selectedAmount = 0;
+        const stripe = Stripe('{{ config("services.stripe.key") }}');
+
+        // Sélection montant prédéfini
+        document.querySelectorAll('.donation-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.donation-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                selectedAmount = parseInt(this.getAttribute('data-amount'));
+                document.getElementById('customAmount').value = '';
+            });
+        });
+
+        // Montant personnalisé
+        document.getElementById('customAmount').addEventListener('input', function() {
+            document.querySelectorAll('.donation-option').forEach(opt => opt.classList.remove('active'));
+            selectedAmount = parseInt(this.value) || 0;
+        });
+
+        // PayPal
+        document.getElementById('paypalBtn').addEventListener('click', function() {
+            if (selectedAmount <= 0) {
+                showNotification('⚠️ Attention', 'Veuillez sélectionner ou entrer un montant.', 'error');
+                return;
+            }
+
+            showNotification('🎉 Merci !', `Redirection vers PayPal pour ${selectedAmount}€...`, 'success');
+            
+            setTimeout(() => {
+                const paypalUrl = `https://www.paypal.com/paypalme/votrenom/${selectedAmount}`;
+                window.open(paypalUrl, '_blank');
+            }, 1000);
+        });
+
+        // Stripe - Carte bancaire
+        document.getElementById('cardBtn').addEventListener('click', async function() {
+            if (selectedAmount <= 0) {
+                showNotification('⚠️ Attention', 'Veuillez sélectionner ou entrer un montant.', 'error');
+                return;
+            }
+
+            try {
+                // Désactiver le bouton
+                this.disabled = true;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement...';
+
+                // Notification élégante
+                showNotification('🎉 Merci pour votre don !', `Redirection vers le paiement sécurisé de ${selectedAmount}€...`, 'success');
+
+                // Créer session Stripe
+                const response = await fetch('{{ route("donation.checkout") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({ amount: selectedAmount })
+                });
+
+                const session = await response.json();
+
+                if (session.error) {
+                    throw new Error(session.error);
+                }
+
+                // Redirection Stripe
+                const result = await stripe.redirectToCheckout({
+                    sessionId: session.id
+                });
+
+                if (result.error) {
+                    showNotification('❌ Erreur', result.error.message, 'error');
+                }
+
+            } catch (error) {
+                console.error('Erreur:', error);
+                showNotification('❌ Erreur', 'Une erreur est survenue. Veuillez réessayer.', 'error');
+            } finally {
+                this.disabled = false;
+                this.innerHTML = '<i class="fas fa-credit-card" style="color: var(--diabe-green);"></i> Carte bancaire';
+            }
+        });
+
+        // Fonction notification
+        function showNotification(title, message, type = 'info') {
+            const oldNotif = document.getElementById('customNotification');
+            if (oldNotif) oldNotif.remove();
+
+            const notification = document.createElement('div');
+            notification.id = 'customNotification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                padding: 20px 25px;
+                border-radius: 12px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                z-index: 99999;
+                min-width: 300px;
+                max-width: 400px;
+                animation: slideInRight 0.3s ease;
+                border-left: 4px solid ${type === 'success' ? '#22B573' : type === 'error' ? '#dc3545' : '#007bff'};
+            `;
+
+            notification.innerHTML = `
+                <div style="display: flex; align-items: start; gap: 15px;">
+                    <div style="
+                        width: 40px;
+                        height: 40px;
+                        background: ${type === 'success' ? '#22B573' : type === 'error' ? '#dc3545' : '#007bff'};
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        color: white;
+                        font-size: 20px;
+                        font-weight: bold;
+                    ">
+                        ${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}
+                    </div>
+                    <div style="flex: 1;">
+                        <h4 style="margin: 0 0 5px 0; color: #333; font-size: 16px; font-weight: 700;">${title}</h4>
+                        <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.4;">${message}</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" style="
+                        background: none;
+                        border: none;
+                        font-size: 24px;
+                        color: #999;
+                        cursor: pointer;
+                        padding: 0;
+                        line-height: 1;
+                        width: 24px;
+                        height: 24px;
+                    ">×</button>
+                </div>
+            `;
+
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInRight {
+                    from { transform: translateX(400px); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            document.body.appendChild(notification);
+
+            if (type !== 'error') {
+                setTimeout(() => {
+                    notification.style.animation = 'slideOutRight 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }, 4000);
+            }
+        }
+    });
+
+    // Menu mobile
+    (function() {
+        document.addEventListener('click', function(e) {
+            const openBtn = e.target.closest('[data-open-mobile-menu]');
+            if (!openBtn) return;
+
+            const templateToggle = document.querySelector('.th-menu-wrapper .th-menu-toggle');
+            if (templateToggle) templateToggle.click();
+        });
+    })();
+</script>
+
+
+
 </body>
 
 </html>
