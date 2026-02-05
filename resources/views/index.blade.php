@@ -781,8 +781,7 @@
                 style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
 
                 <h3 class="stat-number" data-count="100" data-format="percent"
-                    style="font-size:42px;margin:0;font-weight:900;background:linear-gradient(135deg,#22B573,#34D399,#16A34A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-                    0</h3>
+                    style="font-size:42px;margin:0;font-weight:900;background:linear-gradient(135deg,#22B573,#34D399,#16A34A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"> 0</h3>
 
                 <p class="stat-label" style="margin-top:10px;color:#cbd5e1;font-weight:600;">
                     Suivi quotidien
@@ -1057,6 +1056,49 @@
     <script src="assets/js/main.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="assets/js/index.js"></script>
+
+
+    <SCript>// Animation des cartes statistiques + compteur (au chargement)
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const statCards = document.querySelectorAll('.stat-card');
+        statCards.forEach(card => card.classList.add('loaded'));
+
+        // ✅ Compteur jQuery robuste (évite conflits $)
+        if (typeof jQuery !== "undefined") {
+          (function($){
+            function formatValue(val, format) {
+              if (format === "kplus") return Math.round(val) + "K+";
+              if (format === "score") return val.toFixed(1) + "/5";
+              if (format === "percent") return Math.round(val) + "%";
+              return Math.round(val);
+            }
+
+            $(".stat-number").each(function(i){
+              var $el = $(this);
+              var target = parseFloat($el.attr("data-count") || "0");
+              var format = $el.attr("data-format") || "";
+              var duration = 1400 + (i * 250);
+
+              // reset à chaque refresh
+              $el.text(formatValue(0, format));
+
+              $({ n: 0 }).animate({ n: target }, {
+                duration: duration,
+                easing: "swing",
+                step: function () {
+                  $el.text(formatValue(this.n, format));
+                },
+                complete: function () {
+                  $el.text(formatValue(target, format));
+                }
+              });
+            });
+          })(jQuery);
+        }
+
+      }, 300);
+    });</SCript>
     
 
 </body>
