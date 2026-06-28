@@ -18,6 +18,11 @@ class PageController extends Controller
         return view('contact');
     }
 
+    public function confidentialite()
+    {
+        return view('confidentialite');
+    }
+
     public function sendContact(Request $request)
     {
         // Validation des données

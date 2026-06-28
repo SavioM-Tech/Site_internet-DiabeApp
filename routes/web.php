@@ -12,6 +12,8 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.send');
 
+Route::get('/confidentialite', [PageController::class, 'confidentialite'])->name('privacy');
+
 // Routes de donation
 Route::post('/donation/create-checkout-session', [DonationController::class, 'createCheckoutSession'])->name('donation.checkout');
 Route::get('/donation/success', [DonationController::class, 'success'])->name('donation.success');
