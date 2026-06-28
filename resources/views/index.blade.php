@@ -726,20 +726,12 @@
         box-shadow:0 10px 30px rgba(0,0,0,.35);
         ">
 
-                <h3 class="stat-number" data-count="100" data-format="percent"
-                    style="
-              font-size:42px;
-              margin:0;
-              font-weight:900;
-              background:linear-gradient(135deg,#22B573,#34D399,#16A34A);
-              -webkit-background-clip:text;
-              -webkit-text-fill-color:transparent;
-            ">
-                    0</h3>
+                <i class="fa-solid fa-gift" aria-hidden="true"
+                    style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
 
                 <p class="stat-label"
                     style="
-        margin-top:10px;
+        margin-top:14px;
         color:#cbd5e1;
         font-weight:600;
         ">
@@ -752,11 +744,10 @@
             <div class="stat-card"
                 style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
 
-                <h3 class="stat-number" data-count="100" data-format="percent"
-                    style="font-size:42px;margin:0;font-weight:900;background:linear-gradient(135deg,#22B573,#34D399,#16A34A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-                    0</h3>
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"
+                    style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
 
-                <p class="stat-label" style="margin-top:10px;color:#cbd5e1;font-weight:600;">
+                <p class="stat-label" style="margin-top:14px;color:#cbd5e1;font-weight:600;">
                     Données privées
                 </p>
 
@@ -766,11 +757,10 @@
             <div class="stat-card"
                 style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
 
-                <h3 class="stat-number" data-count="100" data-format="percent"
-                    style="font-size:42px;margin:0;font-weight:900;background:linear-gradient(135deg,#22B573,#34D399,#16A34A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-                    0</h3>
+                <i class="fa-solid fa-hand-pointer" aria-hidden="true"
+                    style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
 
-                <p class="stat-label" style="margin-top:10px;color:#cbd5e1;font-weight:600;">
+                <p class="stat-label" style="margin-top:14px;color:#cbd5e1;font-weight:600;">
                     Simple à utiliser
                 </p>
 
@@ -780,10 +770,10 @@
             <div class="stat-card"
                 style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
 
-                <h3 class="stat-number" data-count="100" data-format="percent"
-                    style="font-size:42px;margin:0;font-weight:900;background:linear-gradient(135deg,#22B573,#34D399,#16A34A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"> 0</h3>
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"
+                    style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
 
-                <p class="stat-label" style="margin-top:10px;color:#cbd5e1;font-weight:600;">
+                <p class="stat-label" style="margin-top:14px;color:#cbd5e1;font-weight:600;">
                     Suivi quotidien
                 </p>
 
