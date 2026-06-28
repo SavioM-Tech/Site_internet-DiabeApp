@@ -738,6 +738,22 @@
         .stats-banner .sc-2 { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
         .stats-banner .sc-3 { background: linear-gradient(135deg, #8B5CF6, #6D28D9); }
         .stats-banner .sc-4 { background: linear-gradient(135deg, #F59E0B, #EA580C); }
+
+        /* Hover sur les cartes de contenu */
+        .work-card,
+        .blog-card,
+        .testi-card6,
+        .hero-feature-card7 {
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        .work-card:hover,
+        .blog-card:hover,
+        .testi-card6:hover,
+        .hero-feature-card7:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .15);
+        }
     </style>
 
     <section class="stats-banner"
