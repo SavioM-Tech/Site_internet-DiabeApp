@@ -21,7 +21,8 @@
 
                     {{-- En-tête --}}
                     <tr>
-                        <td align="center" bgcolor="#16A34A" style="background-color:#16A34A; background-image:linear-gradient(135deg,#22B573,#16A34A); padding:30px 24px;">
+                        <td align="center" bgcolor="#16A34A" style="background-color:#16A34A; background-image:linear-gradient(135deg,#22B573,#16A34A); padding:28px 24px 30px 24px;">
+                            <img src="https://diabeapp.com/assets/icon.png" width="64" height="64" alt="Diabe-App" style="display:block; margin:0 auto 14px auto; width:64px; height:64px; border-radius:16px; border:0;">
                             <h1 style="margin:0; color:#ffffff; font-size:22px; font-weight:700; line-height:1.3;">Nouveau message de contact</h1>
                             <p style="margin:6px 0 0 0; color:#dcfce7; font-size:13px;">Formulaire du site diabeapp.com</p>
                         </td>
