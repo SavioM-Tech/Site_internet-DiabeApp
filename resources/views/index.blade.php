@@ -744,7 +744,7 @@
             <div class="stat-card"
                 style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
 
-                <i class="fa-solid fa-shield-halved" aria-hidden="true"
+                <i class="fa-solid fa-user-shield" aria-hidden="true"
                     style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
 
                 <p class="stat-label" style="margin-top:14px;color:#cbd5e1;font-weight:600;">
@@ -757,7 +757,7 @@
             <div class="stat-card"
                 style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
 
-                <i class="fa-solid fa-hand-pointer" aria-hidden="true"
+                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"
                     style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
 
                 <p class="stat-label" style="margin-top:14px;color:#cbd5e1;font-weight:600;">
