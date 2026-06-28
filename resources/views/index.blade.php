@@ -726,7 +726,7 @@
         box-shadow:0 10px 30px rgba(0,0,0,.35);
         ">
 
-                <h3 class="stat-number" data-count="10" data-format="kplus"
+                <h3 class="stat-number" data-count="100" data-format="percent"
                     style="
               font-size:42px;
               margin:0;
@@ -743,7 +743,7 @@
         color:#cbd5e1;
         font-weight:600;
         ">
-                    Utilisateurs
+                    Gratuit
                 </p>
 
             </div>
@@ -752,12 +752,12 @@
             <div class="stat-card"
                 style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
 
-                <h3 class="stat-number" data-count="4.8" data-format="score"
+                <h3 class="stat-number" data-count="100" data-format="percent"
                     style="font-size:42px;margin:0;font-weight:900;background:linear-gradient(135deg,#22B573,#34D399,#16A34A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
                     0</h3>
 
                 <p class="stat-label" style="margin-top:10px;color:#cbd5e1;font-weight:600;">
-                    Note moyenne
+                    Données privées
                 </p>
 
             </div>
