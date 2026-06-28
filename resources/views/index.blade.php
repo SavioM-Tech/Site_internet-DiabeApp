@@ -725,7 +725,7 @@
         }
 
         .stats-banner .stat-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) !important;
             box-shadow: 0 22px 45px rgba(0, 0, 0, .45);
             filter: brightness(1.07);
         }
@@ -751,7 +751,7 @@
         .blog-card:hover,
         .testi-card6:hover,
         .hero-feature-card7:hover {
-            transform: translateY(-8px);
+            transform: translateY(-8px) !important;
             box-shadow: 0 18px 40px rgba(0, 0, 0, .15);
         }
     </style>
