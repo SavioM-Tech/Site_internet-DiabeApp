@@ -699,6 +699,47 @@
     </section>
 
     <!-- ✅ BANNIÈRE INDICATEURS -->
+    <style>
+        .stats-banner .stat-card {
+            border-radius: 18px;
+            padding: 34px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            transition: transform .35s ease, box-shadow .35s ease, filter .35s ease;
+            cursor: default;
+        }
+
+        .stats-banner .stat-card .stat-icon {
+            font-size: 46px;
+            line-height: 1;
+            color: #fff;
+            display: inline-block;
+            transition: transform .35s ease;
+        }
+
+        .stats-banner .stat-card .stat-label {
+            margin: 16px 0 0 0;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: .2px;
+        }
+
+        .stats-banner .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 22px 45px rgba(0, 0, 0, .45);
+            filter: brightness(1.07);
+        }
+
+        .stats-banner .stat-card:hover .stat-icon {
+            transform: scale(1.14);
+        }
+
+        .stats-banner .sc-1 { background: linear-gradient(135deg, #10B981, #047857); }
+        .stats-banner .sc-2 { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
+        .stats-banner .sc-3 { background: linear-gradient(135deg, #8B5CF6, #6D28D9); }
+        .stats-banner .sc-4 { background: linear-gradient(135deg, #F59E0B, #EA580C); }
+    </style>
+
     <section class="stats-banner"
         style="
         background:linear-gradient(135deg,#184aae,#0b1936);
@@ -716,67 +757,27 @@
         ">
 
             <!-- CARD -->
-            <div class="stat-card"
-                style="
-        background:rgba(255,255,255,.06);
-        border-radius:18px;
-        padding:30px 20px;
-        text-align:center;
-        backdrop-filter:blur(10px);
-        box-shadow:0 10px 30px rgba(0,0,0,.35);
-        ">
-
-                <i class="fa-solid fa-gift" aria-hidden="true"
-                    style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
-
-                <p class="stat-label"
-                    style="
-        margin-top:14px;
-        color:#cbd5e1;
-        font-weight:600;
-        ">
-                    Gratuit
-                </p>
-
+            <div class="stat-card sc-1">
+                <i class="fa-solid fa-gift stat-icon" aria-hidden="true"></i>
+                <p class="stat-label">Gratuit</p>
             </div>
 
             <!-- CARD -->
-            <div class="stat-card"
-                style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
-
-                <i class="fa-solid fa-user-shield" aria-hidden="true"
-                    style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
-
-                <p class="stat-label" style="margin-top:14px;color:#cbd5e1;font-weight:600;">
-                    Données privées
-                </p>
-
+            <div class="stat-card sc-2">
+                <i class="fa-solid fa-user-shield stat-icon" aria-hidden="true"></i>
+                <p class="stat-label">Données privées</p>
             </div>
 
             <!-- CARD -->
-            <div class="stat-card"
-                style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
-
-                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"
-                    style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
-
-                <p class="stat-label" style="margin-top:14px;color:#cbd5e1;font-weight:600;">
-                    Simple à utiliser
-                </p>
-
+            <div class="stat-card sc-3">
+                <i class="fa-solid fa-wand-magic-sparkles stat-icon" aria-hidden="true"></i>
+                <p class="stat-label">Simple à utiliser</p>
             </div>
 
             <!-- CARD -->
-            <div class="stat-card"
-                style="background:rgba(255,255,255,.06);border-radius:18px;padding:30px 20px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);">
-
-                <i class="fa-solid fa-calendar-check" aria-hidden="true"
-                    style="font-size:46px;line-height:1;color:#22B573;display:inline-block;"></i>
-
-                <p class="stat-label" style="margin-top:14px;color:#cbd5e1;font-weight:600;">
-                    Suivi quotidien
-                </p>
-
+            <div class="stat-card sc-4">
+                <i class="fa-solid fa-calendar-check stat-icon" aria-hidden="true"></i>
+                <p class="stat-label">Suivi quotidien</p>
             </div>
 
         </div>
