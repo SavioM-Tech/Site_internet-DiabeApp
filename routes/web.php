@@ -14,6 +14,9 @@ Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.s
 
 Route::get('/confidentialite', [PageController::class, 'confidentialite'])->name('privacy');
 
+// Lien court vers l'APK de test Android (redirige vers le build EAS courant)
+Route::get('/test', fn () => redirect('https://expo.dev/accounts/saviomilandou/projects/diabe-app/builds/918983ee-19a9-4e02-9587-effb1ccb4400'))->name('test.android');
+
 // Routes de donation
 Route::post('/donation/create-checkout-session', [DonationController::class, 'createCheckoutSession'])->name('donation.checkout');
 Route::get('/donation/success', [DonationController::class, 'success'])->name('donation.success');
