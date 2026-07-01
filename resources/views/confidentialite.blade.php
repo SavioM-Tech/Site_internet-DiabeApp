@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="assets/css/app.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
 
     <style>
         .legal-section {
@@ -118,7 +119,6 @@
                 <ul>
                     <li><a href="home#hero">Application</a></li>
                     <li><a href="home#features">Fonctionnalités</a></li>
-                    <li><a href="home#testimonials">Témoignages</a></li>
                     <li><a href="home#faq">FAQ</a></li>
                     <li><a href="home#download">Télécharger</a></li>
                     <li><a href="home#support">Soutenir</a></li>
@@ -141,7 +141,6 @@
                     <ul class="diabe-menu">
                         <li><a href="home">Application</a></li>
                         <li><a href="home#features">Fonctionnalités</a></li>
-                        <li><a href="home#testimonials">Témoignages</a></li>
                         <li><a href="home#faq">FAQ</a></li>
                     </ul>
                 </nav>
@@ -247,25 +246,25 @@
                 <div class="row gy-4 justify-content-between align-items-center">
                     <div class="col-lg-5">
                         <div class="title-area mb-0 text-center text-lg-start">
-                            <h4 class="sec-title text-white m-0">Téléchargez Diabe-App dès maintenant</h4>
-                            <p class="text-white-50 mt-2 mb-0">Disponible sur Android & iOS</p>
+                            <h4 class="sec-title text-white m-0">Diabe-App arrive bientôt sur mobile</h4>
+                            <p class="text-white-50 mt-2 mb-0">Prochainement sur Android & iOS</p>
                         </div>
                     </div>
                     <div class="col-lg-7">
                         <div class="footer-top-btn">
                             <div class="btn-group justify-content-center justify-content-lg-end">
-                                <a href="#" class="th-btn style3">
+                                <span class="th-btn style3" style="opacity:.7;cursor:default;pointer-events:none;">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                                         alt="Google Play"
                                         style="height: 40px; width: 140px; object-fit: contain; vertical-align: middle" />
-                                    Télécharger
-                                </a>
-                                <a href="#" class="th-btn style3">
+                                    Bientôt disponible
+                                </span>
+                                <span class="th-btn style3" style="opacity:.7;cursor:default;pointer-events:none;">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                                         alt="App Store"
                                         style="height: 40px; width: 140px; object-fit: contain; vertical-align: middle" />
-                                    Télécharger
-                                </a>
+                                    Bientôt disponible
+                                </span>
                             </div>
                         </div>
                     </div>
