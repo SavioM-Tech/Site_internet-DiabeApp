@@ -56,7 +56,6 @@
                 <ul>
                     <li><a href="#hero">Application</a></li>
                     <li><a href="#features">Fonctionnalités</a></li>
-                    <li><a href="#testimonials">Témoignages</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="contact">Contact</a></li>
                     <li><a href="#download">Télécharger</a></li>
@@ -84,7 +83,6 @@
                     <ul class="diabe-menu">
                         <li><a href="#hero">Application</a></li>
                         <li><a href="#features">Fonctionnalités</a></li>
-                        <li><a href="#testimonials">Témoignages</a></li>
                         <li><a href="#faq">FAQ</a></li>
                          <li><a href="contact">Contact</a></li>
                     </ul>
@@ -343,7 +341,8 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimonials (masqués : app pas encore lancée, avis non réels) -->
+    @if(false)
     <section class="space bg-smoke2 overflow-hidden bg-auto" id="testimonials"
         data-bg-src="assets/img/bg/pattern_bg_9.png">
         <div class="shape-mockup d-xxl-block d-none testi-bg-shape7-1" data-top="0" data-right="0">
@@ -437,6 +436,7 @@
 
         </div>
     </section>
+    @endif
 
     <!-- ✅ FAQ : ID = faq (important pour le menu) -->
     <div class="faq-area overflow-hidden" id="faq">
@@ -806,26 +806,26 @@
                 <div class="row gy-4 justify-content-between align-items-center">
                     <div class="col-lg-5">
                         <div class="title-area mb-0 text-center text-lg-start">
-                            <h4 class="sec-title text-white m-0">Téléchargez Diabe-App dès maintenant</h4>
-                            <p class="text-white-50 mt-2 mb-0">Disponible sur Android & iOS</p>
+                            <h4 class="sec-title text-white m-0">Diabe-App arrive bientôt sur mobile</h4>
+                            <p class="text-white-50 mt-2 mb-0">Prochainement sur Android & iOS</p>
                         </div>
                     </div>
 
                     <div class="col-lg-7">
                         <div class="footer-top-btn">
                             <div class="btn-group justify-content-center justify-content-lg-end">
-                                <a href="#" class="th-btn style3">
+                                <span class="th-btn style3" style="opacity:.7;cursor:default;pointer-events:none;">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                                         alt="Google Play"
                                         style="height: 40px; width: 140px; object-fit: contain; vertical-align: middle" />
-                                    Télécharger
-                                </a>
-                                <a href="#" class="th-btn style3">
+                                    Bientôt disponible
+                                </span>
+                                <span class="th-btn style3" style="opacity:.7;cursor:default;pointer-events:none;">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                                         alt="App Store"
                                         style="height: 40px; width: 140px; object-fit: contain; vertical-align: middle" />
-                                    Télécharger
-                                </a>
+                                    Bientôt disponible
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -875,8 +875,7 @@
                             <ul>
                                 <li><a href="#" data-bs-toggle="modal"
                                         data-bs-target="#mentionsLegalesModal">Conditions d'utilisation</a></li>
-                                <li><a href="#" data-bs-toggle="modal"
-                                        data-bs-target="#confidentialiteModal">Politique de confidentialité</a></li>
+                                <li><a href="confidentialite">Politique de confidentialité</a></li>
                                 <li><a href="#" data-bs-toggle="modal"
                                         data-bs-target="#cookiesModal">Cookies</a></li>
                             </ul>
