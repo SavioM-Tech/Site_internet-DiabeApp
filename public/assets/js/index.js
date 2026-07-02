@@ -149,12 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        showNotification('🎉 Merci !', `Redirection vers PayPal pour ${selectedAmount}€...`, 'success');
-        
-        setTimeout(() => {
-            const paypalUrl = `https://www.paypal.com/paypalme/votrenom/${selectedAmount}`;
-            window.open(paypalUrl, '_blank');
-        }, 1000);
+        showNotification('ℹ️ Bientôt disponible', 'Les dons en ligne seront activés très prochainement. Merci pour votre soutien !', 'info');
     });
 
     // Stripe - Carte bancaire
@@ -164,46 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        try {
-            // Désactiver le bouton
-            this.disabled = true;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement...';
-
-            // Notification élégante
-            showNotification('🎉 Merci pour votre don !', `Redirection vers le paiement sécurisé de ${selectedAmount}€...`, 'success');
-
-            // Créer session Stripe
-            const response = await fetch('{{ route("donation.checkout") }}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({ amount: selectedAmount })
-            });
-
-            const session = await response.json();
-
-            if (session.error) {
-                throw new Error(session.error);
-            }
-
-            // Redirection Stripe
-            const result = await stripe.redirectToCheckout({
-                sessionId: session.id
-            });
-
-            if (result.error) {
-                showNotification('❌ Erreur', result.error.message, 'error');
-            }
-
-        } catch (error) {
-            console.error('Erreur:', error);
-            showNotification('❌ Erreur', 'Une erreur est survenue. Veuillez réessayer.', 'error');
-        } finally {
-            this.disabled = false;
-            this.innerHTML = '<i class="fas fa-credit-card" style="color: var(--diabe-green);"></i> Carte bancaire';
-        }
+        showNotification('ℹ️ Bientôt disponible', 'Les dons en ligne seront activés très prochainement. Merci pour votre soutien !', 'info');
     });
 
     // Fonction notification
