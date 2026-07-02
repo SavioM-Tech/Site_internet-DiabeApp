@@ -22,10 +22,9 @@ class DonationController extends Controller
             // Configuration Stripe
             Stripe::setApiKey(config('services.stripe.secret'));
 
-            // Créer une session de paiement Stripe
-            // (pas de payment_method_types : Stripe affiche les moyens activés
-            //  dans le Dashboard — carte + PayPal une fois PayPal activé)
+            // Créer une session de paiement Stripe (carte + PayPal uniquement)
             $session = Session::create([
+                'payment_method_types' => ['card', 'paypal'],
                 'line_items' => [[
                     'price_data' => [
                         'currency' => 'eur',
