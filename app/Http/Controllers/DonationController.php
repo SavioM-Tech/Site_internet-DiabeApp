@@ -41,7 +41,7 @@ class DonationController extends Controller
                 'cancel_url' => url('/donation/cancel'),
             ]);
 
-            return response()->json(['id' => $session->id]);
+            return response()->json(['id' => $session->id, 'url' => $session->url]);
 
         } catch (\Exception $e) {
             Log::error('Erreur Stripe: ' . $e->getMessage());

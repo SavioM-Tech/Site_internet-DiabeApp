@@ -159,7 +159,33 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        showNotification('ℹ️ Bientôt disponible', 'Les dons en ligne seront activés très prochainement. Merci pour votre soutien !', 'info');
+        const cfg = window.DIABEAPP_DONATION || {};
+        try {
+            this.disabled = true;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement...';
+
+            const response = await fetch(cfg.checkoutUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': cfg.csrfToken
+                },
+                body: JSON.stringify({ amount: selectedAmount })
+            });
+
+            const data = await response.json();
+            if (data.error || !data.url) {
+                throw new Error(data.error || 'Réponse invalide');
+            }
+
+            window.location.href = data.url;
+
+        } catch (error) {
+            console.error('Erreur don:', error);
+            showNotification('❌ Erreur', 'Une erreur est survenue. Veuillez réessayer.', 'error');
+            this.disabled = false;
+            this.innerHTML = '<i class="fas fa-credit-card" style="color: var(--diabe-green);"></i> Carte bancaire';
+        }
     });
 
     // Fonction notification

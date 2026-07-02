@@ -463,6 +463,12 @@
     <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        window.DIABEAPP_DONATION = {
+            checkoutUrl: "{{ route('donation.checkout') }}",
+            csrfToken: "{{ csrf_token() }}"
+        };
+    </script>
      <script src="assets/js/contact.js"></script>
    <script src="https://js.stripe.com/v3/"></script>
 
