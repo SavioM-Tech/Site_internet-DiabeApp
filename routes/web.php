@@ -6,7 +6,7 @@ use App\Http\Controllers\DonationController;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 
-Route::get('/home', [PageController::class, 'index'])->name('home');
+Route::get('/home', [PageController::class, 'index']);
 
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 

@@ -1067,7 +1067,7 @@
             csrfToken: "{{ csrf_token() }}"
         };
     </script>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/index.js?v={{ filemtime(public_path('assets/js/index.js')) }}"></script>
 
 
     <SCript>// Animation des cartes statistiques + compteur (au chargement)

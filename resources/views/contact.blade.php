@@ -469,7 +469,7 @@
             csrfToken: "{{ csrf_token() }}"
         };
     </script>
-     <script src="assets/js/contact.js"></script>
+     <script src="assets/js/contact.js?v={{ filemtime(public_path('assets/js/contact.js')) }}"></script>
    <script src="https://js.stripe.com/v3/"></script>
 
 
