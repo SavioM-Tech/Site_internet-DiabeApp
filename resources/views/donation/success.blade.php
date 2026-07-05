@@ -6,7 +6,7 @@
     <title>Merci pour votre don - Diabe-App</title>
     <style>
         body {
-            background: linear-gradient(135deg, #22B573, #16A34A);
+            background: #eef7e6 url('/assets/img/hero/hero_bg_7_1.jpg') center center / cover no-repeat fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -222,7 +222,8 @@
             la prévention du diabète pour tous. 💚
         </p>
         <p>
-            Un reçu de paiement vous a été envoyé par email.
+            Parlez-en autour de vous : plus nous sommes nombreux, plus nous pouvons
+            faire avancer la prévention du diabète. Merci de faire passer le mot !
         </p>
         <a href="/" class="btn">Retour à l'accueil</a>
     </div>
