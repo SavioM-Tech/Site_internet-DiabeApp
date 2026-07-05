@@ -936,6 +936,17 @@
                         </button>
                     </div>
 
+                    <!-- Cagnotte Leetchi -->
+                    <div style="text-align:center; margin-top:16px; padding-top:14px; border-top:1px solid #eee;">
+                        <p style="font-size:13px; color:#999; margin:0 0 8px;">ou</p>
+                        <a href="https://www.leetchi.com/fr/c/soutenez-diabe-app-prevention-du-diabete-5907466"
+                            target="_blank" rel="noopener"
+                            style="display:inline-flex; align-items:center; gap:8px; font-weight:600; color:var(--diabe-green); text-decoration:none;">
+                            <i class="fa-solid fa-hand-holding-heart" style="color:#e11d48;"></i>
+                            Participez à notre cagnotte Leetchi
+                        </a>
+                    </div>
+
                     <!-- Message de remerciement -->
                     <p style="text-align: center; font-size: 14px; color: #777; margin-top: 20px;">
                         🙏 Merci de votre générosité !
