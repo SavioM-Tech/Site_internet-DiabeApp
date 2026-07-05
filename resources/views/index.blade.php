@@ -134,9 +134,6 @@
                                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.8s">
                                                     <a href="#download" class="th-btn">Télécharger l'app <i
                                                             class="fa-solid fa-download ms-2"></i></a>
-                                                    <a href="#features" class="th-btn th-border2">Découvrir les
-                                                        fonctionnalités <i
-                                                            class="fa-light fa-arrow-right-long ms-2"></i></a>
                                                     <a href="#" class="th-btn th-border2" data-bs-toggle="modal"
                                                         data-bs-target="#donationModal">Soutenir le projet <i
                                                             class="fa-solid fa-heart ms-2" style="color:#e11d48;"></i></a>
@@ -164,8 +161,6 @@
                                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.8s">
                                                     <a href="#blog-sec" class="th-btn">Voir les ressources <i
                                                             class="fa-solid fa-book-open ms-2"></i></a>
-                                                    <a href="#faq" class="th-btn th-border2">Questions fréquentes
-                                                        <i class="fa-light fa-arrow-right-long ms-2"></i></a>
                                                     <a href="#" class="th-btn th-border2" data-bs-toggle="modal"
                                                         data-bs-target="#donationModal">Soutenir le projet <i
                                                             class="fa-solid fa-heart ms-2" style="color:#e11d48;"></i></a>
