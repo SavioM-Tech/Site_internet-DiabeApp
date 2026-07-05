@@ -11,7 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Endpoint de paiement appelé en AJAX : exclu du CSRF pour éviter les 419
+        // liés à la désynchronisation du jeton selon le navigateur/cache.
+        // Sans risque : créer une session Stripe n'entraîne aucun débit.
+        $middleware->validateCsrfTokens(except: [
+            'donation/create-checkout-session',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
