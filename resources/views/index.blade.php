@@ -94,7 +94,7 @@
                         Télécharger <i class="fa-solid fa-download ms-2"></i>
                     </a>
                     <a href="#" class="th-btn th-border2" data-bs-toggle="modal" data-bs-target="#donationModal">
-                        Soutenir <i class="fa-solid fa-heart ms-2"></i>
+                        Soutenir <i class="fa-solid fa-heart ms-2" style="color:#e11d48;"></i>
                     </a>
 
                     <button class="diabe-burger" data-open-mobile-menu aria-label="Ouvrir le menu">
@@ -137,6 +137,9 @@
                                                     <a href="#features" class="th-btn th-border2">Découvrir les
                                                         fonctionnalités <i
                                                             class="fa-light fa-arrow-right-long ms-2"></i></a>
+                                                    <a href="#" class="th-btn th-border2" data-bs-toggle="modal"
+                                                        data-bs-target="#donationModal">Soutenir le projet <i
+                                                            class="fa-solid fa-heart ms-2" style="color:#e11d48;"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -163,6 +166,9 @@
                                                             class="fa-solid fa-book-open ms-2"></i></a>
                                                     <a href="#faq" class="th-btn th-border2">Questions fréquentes
                                                         <i class="fa-light fa-arrow-right-long ms-2"></i></a>
+                                                    <a href="#" class="th-btn th-border2" data-bs-toggle="modal"
+                                                        data-bs-target="#donationModal">Soutenir le projet <i
+                                                            class="fa-solid fa-heart ms-2" style="color:#e11d48;"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -231,7 +237,7 @@
                             <div class="hero-feature-card7 bg-smoke5">
                                 <a href="#" class="icon-btn" aria-label="Découvrir" data-bs-toggle="modal"
                                     data-bs-target="#donationModal">
-                                    <i class="fa-solid fa-heart ms-2"></i>
+                                    <i class="fa-solid fa-heart ms-2" style="color:#e11d48;"></i>
                                 </a>
 
                                 <h6>Soutenir l'application Diabe-App</h6>
@@ -854,7 +860,7 @@
                 </div>
                 <div class="col-md-4 justify-content-center justify-content-lg-end text-center text-md-end">
                     <a href="#" class="th-btn style1" data-bs-toggle="modal" data-bs-target="#donationModal">
-                        Faire un don de soutien <i class="fa-light fa-heart mx-3"></i>
+                        Faire un don de soutien <i class="fa-light fa-heart mx-3" style="color:#e11d48;"></i>
                     </a>
                 </div>
             </div>

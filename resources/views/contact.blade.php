@@ -85,7 +85,7 @@
                         Télécharger <i class="fa-solid fa-download ms-2"></i>
                     </a>
                     <a href="#" class="th-btn th-border2" data-bs-toggle="modal" data-bs-target="#donationModal">
-                        Soutenir <i class="fa-solid fa-heart ms-2"></i>
+                        Soutenir <i class="fa-solid fa-heart ms-2" style="color:#e11d48;"></i>
                     </a>
 
                     <button class="diabe-burger" data-open-mobile-menu aria-label="Ouvrir le menu">
@@ -254,7 +254,7 @@
                 </div>
                 <div class="col-md-4 justify-content-center justify-content-lg-end text-center text-md-end">
                     <a href="#" class="th-btn style1" data-bs-toggle="modal" data-bs-target="#donationModal">
-                        Faire un don de soutien <i class="fa-light fa-heart mx-3"></i>
+                        Faire un don de soutien <i class="fa-light fa-heart mx-3" style="color:#e11d48;"></i>
                     </a>
                 </div>
             </div>
