@@ -270,9 +270,13 @@
         .know-intro h2 { color: #0f172a; margin: 8px 0 16px; }
         .know-intro p { color: #475569; line-height: 1.8; font-size: 17px; }
         .know-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
-        .know-card { background: #fff; border-radius: 16px; padding: 30px 22px; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,.05); border: 1px solid #eef2ee; transition: transform .3s ease, box-shadow .3s ease; }
+        .know-card { --kc-grad: linear-gradient(135deg,#22B573,#16A34A); --kc-color:#16A34A; background: linear-gradient(#fff,#fff) padding-box, var(--kc-grad) border-box; border: 2px solid transparent; border-radius: 16px; padding: 30px 22px; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,.05); transition: transform .3s ease, box-shadow .3s ease; }
         .know-card:hover { transform: translateY(-6px); box-shadow: 0 16px 38px rgba(0,0,0,.10); }
-        .know-card .num { font-size: 34px; font-weight: 800; color: #16A34A; line-height: 1.1; }
+        .know-card .num { font-size: 34px; font-weight: 800; color: var(--kc-color); line-height: 1.1; }
+        .know-card:nth-child(1) { --kc-grad: linear-gradient(135deg,#34D399,#059669); --kc-color:#059669; }
+        .know-card:nth-child(2) { --kc-grad: linear-gradient(135deg,#60A5FA,#2563EB); --kc-color:#2563EB; }
+        .know-card:nth-child(3) { --kc-grad: linear-gradient(135deg,#A78BFA,#7C3AED); --kc-color:#7C3AED; }
+        .know-card:nth-child(4) { --kc-grad: linear-gradient(135deg,#FBBF24,#EA580C); --kc-color:#EA580C; }
         .know-card .lbl { color: #475569; font-size: 14.5px; line-height: 1.55; margin-top: 12px; }
         .know-note { text-align: center; color: #94a3b8; font-size: 13px; margin-top: 22px; }
         .know-cta { text-align: center; margin-top: 26px; }
@@ -290,11 +294,11 @@
 
             <div class="know-stats">
                 <div class="know-card">
-                    <div class="num">~90 %</div>
+                    <div class="num">90 %</div>
                     <div class="lbl">des diabètes sont de type 2, en grande partie évitables par l'hygiène de vie</div>
                 </div>
                 <div class="know-card">
-                    <div class="num">~10 ans</div>
+                    <div class="num">10 ans</div>
                     <div class="lbl">le diabète de type 2 peut évoluer sans symptôme avant d'être détecté</div>
                 </div>
                 <div class="know-card">
@@ -302,7 +306,7 @@
                     <div class="lbl">cause de cécité (avant 65 ans) et d'insuffisance rénale en France</div>
                 </div>
                 <div class="know-card">
-                    <div class="num">~4 millions</div>
+                    <div class="num">4 millions</div>
                     <div class="lbl">de personnes traitées pour un diabète en France</div>
                 </div>
             </div>
