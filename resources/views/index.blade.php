@@ -287,8 +287,8 @@
             <div class="know-intro">
                 <span class="sub-title">Connaître le diabète</span>
                 <h2 class="sec-title">Comprendre pour mieux prévenir</h2>
-                <p>Le diabète est une maladie chronique liée à un excès de sucre dans le sang. Le plus fréquent — le
-                    diabète de type 2 — se développe souvent en silence pendant des années. D'où l'importance de
+                <p>Le diabète est une maladie chronique liée à un excès de sucre dans le sang. Le plus fréquent, le
+                    diabète de type 2, se développe souvent en silence pendant des années. D'où l'importance de
                     s'informer, de se faire dépister tôt et d'adopter de bons réflexes au quotidien.</p>
             </div>
 
