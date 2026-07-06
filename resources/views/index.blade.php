@@ -295,7 +295,7 @@
             <div class="know-stats">
                 <div class="know-card">
                     <div class="num">90 %</div>
-                    <div class="lbl">des diabètes sont de type 2, en grande partie évitables par l'hygiène de vie</div>
+                    <div class="lbl">des diabètes sont de type 2, en grande partie évitables par une bonne hygiène de vie</div>
                 </div>
                 <div class="know-card">
                     <div class="num">10 ans</div>
